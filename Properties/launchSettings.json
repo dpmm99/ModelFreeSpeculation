@@ -1,0 +1,50 @@
+{
+  "profiles": {
+    "Phi4_CodeEdit": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__ParamsMethod": "CodeEditingTestParams"
+      }
+    },
+    "Phi4_CodeEdit_Baseline": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__MaxDraftTokens": "0",
+        "SpeculativeDecoding__ParamsMethod": "CodeEditingTestParams"
+      }
+    },
+    "Phi4_SpellCheck": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__ParamsMethod": "SpellCheckTestParams"
+      }
+    },
+    "Phi4_SpellCheck_Baseline": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__MaxDraftTokens": "0",
+        "SpeculativeDecoding__ParamsMethod": "SpellCheckTestParams"
+      }
+    },
+    "Phi4_CodeEdit_MaxDraft20": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__MaxDraftTokens": "20",
+        "SpeculativeDecoding__ParamsMethod": "CodeEditingTestParams"
+      }
+    },
+    "Phi4_CodeEdit_MaxDraft40": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SpeculativeDecoding__ModelPath": "C:\\AI\\phi-4-Q4_K_M.gguf",
+        "SpeculativeDecoding__MaxDraftTokens": "40",
+        "SpeculativeDecoding__ParamsMethod": "CodeEditingTestParams"
+      }
+    }
+  }
+}

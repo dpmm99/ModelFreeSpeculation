@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\NotMine\LLamaSharp\LLama\LLamaSharp.Runtime.targets" Condition="'$(UseProjectReferenceForLLamaSharp)' == 'true' And Exists('..\..\NotMine\LLamaSharp\LLama\LLamaSharp.Runtime.targets')" />
+  
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(UseProjectReferenceForLLamaSharp)' != 'true' Or !Exists('..\..\NotMine\LLamaSharp\LLama\LLamaSharp.Runtime.targets')">
+    <PackageReference Include="LLamaSharp" Version="0.24.0" />
+    <PackageReference Include="LLamaSharp.Backend.Vulkan.Windows" Version="0.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DiffTests\**" />
+    <EmbeddedResource Remove="DiffTests\**" />
+    <None Remove="DiffTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NotMine\LLamaSharp\LLama\LLamaSharp.csproj" Condition="'$(UseProjectReferenceForLLamaSharp)' == 'true' And Exists('..\..\NotMine\LLamaSharp\LLama\LLamaSharp.Runtime.targets')" />
+  </ItemGroup>
+</Project>
